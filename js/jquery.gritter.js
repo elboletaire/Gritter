@@ -202,7 +202,9 @@
 				fade_out_speed = params.speed || this.fade_out_speed,
                 manual_close = unbind_events;
 			
-			this['_before_close_' + unique_id](e, manual_close);
+			if ( this['_before_close_' + unique_id](e, manual_close) === false ) {
+				return;
+			}
 			
 			// If this is true, then we are coming from clicking the (X)
 			if(unbind_events){

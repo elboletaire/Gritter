@@ -153,6 +153,10 @@
 				before_close: function(e, manual_close){
                     var manually = (manual_close) ? 'The "X" was clicked to close me!' : '';
 					alert("I am called before it closes: I am passed the jQuery object for the Gritter element... \n" + manually);
+					// if this function return false the notification won't be closed. e.g...
+					//if (manual_close) {
+						// return confirm("Are you sure?");
+					//}
 				},
 				// (function | optional) function called after it closes
 				after_close: function(e, manual_close){
@@ -184,6 +188,7 @@
 				// (function | optional) function called before it closes
 				before_close: function(e){
 					alert("I am a sticky called before it closes: I am passed the jQuery object for the Gritter element... \n" + e);
+					// if this function return false the notification won't be closed.
 				},
 				// (function | optional) function called after it closes
 				after_close: function(){

@@ -202,7 +202,7 @@
 				fade_out_speed = params.speed || this.fade_out_speed,
                 manual_close = unbind_events;
 			
-			if ( this['_before_close_' + unique_id](e, manual_close) === false ) {
+			if (this['_before_close_' + unique_id](e, manual_close) === false) {
 				return;
 			}
 			
